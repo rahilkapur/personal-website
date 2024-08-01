@@ -10,7 +10,7 @@ const port = 5001;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post('/contact', (req, res) => {
+app.post('/contact', (req, res) => { //contact 
     const {emailName, emailBody } = req.body;
     try {
         let transport = nodemailer.createTransport({
