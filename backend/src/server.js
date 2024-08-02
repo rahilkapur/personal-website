@@ -2,6 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -36,6 +37,13 @@ app.post('/contact', (req, res) => { //contact
 
     }
 })
+
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Handle all other routes by serving the frontend's index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+});
 
 
 app.listen(port, () => {
