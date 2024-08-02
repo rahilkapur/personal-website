@@ -38,6 +38,7 @@ app.post('/contact', (req, res) => { //contact
     }
 })
 const distPath = path.join(__dirname, '../../frontend/dist');
+const fs = require('fs');
 
 fs.readdir(distPath, (err, files) => {
   if (err) {
