@@ -4,4 +4,4 @@ npm start &
 
 cd ../frontend
 npm install
-npm start
+npm run build
