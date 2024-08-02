@@ -37,7 +37,15 @@ app.post('/contact', (req, res) => { //contact
 
     }
 })
+const distPath = path.join(__dirname, '../../frontend/dist');
 
+fs.readdir(distPath, (err, files) => {
+  if (err) {
+    console.error('Error reading dist directory:', err);
+  } else {
+    console.log('Dist directory contents:', files);
+  }
+});
 app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 
 // Handle all other routes by serving the frontend's index.html
