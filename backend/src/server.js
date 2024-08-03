@@ -41,7 +41,7 @@ app.post('/contact', (req, res) => { //contact
 
 
 // Log contents of /app directory
-logDirectoryContents('../../app');
+//logDirectoryContents('../../app');
 
 app.use(express.static('../../personal website/frontend/dist'));
 app.use(express.static('public'));
