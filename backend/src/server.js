@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
-
+const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 5001;
 
@@ -37,6 +37,11 @@ app.post('/contact', (req, res) => { //contact
 
     }
 })
+
+
+
+// Log contents of /app directory
+logDirectoryContents('../../app');
 
 app.use(express.static('../../personal website/frontend/dist'));
 app.use(express.static('public'));
