@@ -37,23 +37,13 @@ app.post('/contact', (req, res) => { //contact
 
     }
 })
-const distPath = path.join(__dirname, '../../frontend/dist');
-const fs = require('fs');
 
-fs.readdir(distPath, (err, files) => {
-  if (err) {
-    console.error('Error reading dist directory:', err);
-  } else {
-    console.log('Dist directory contents:', files);
-  }
-});
-app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+app.use(express.static('../../personal website/frontend/dist'));
 
 // Handle all other routes by serving the frontend's index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/dist', 'index.html'));
+    res.sendFile(express.static('../../personal website/frontend/dist/index.html'));
 });
-
 
 app.listen(port, () => {
     console.log(`My API has been opened on :${port}`);
