@@ -41,9 +41,9 @@ app.post('/contact', (req, res) => { //contact
 app.use(express.static('../../personal website/frontend/dist'));
 app.use(express.static('public'));
 // Handle all other routes by serving the frontend's index.html
+const frontendBuildPath = process.env.FRONTEND_BUILD_PATH || path.join(__dirname, '../../frontend/dist');
 app.get('*', (req, res) => {
-    path.join(__dirname, 'build', 'index.html')
-    res.sendFile(path.join(__dirname, '..', '..', 'frontend/dist/index.html'));
+    res.sendFile(frontendBuildPath);
 });
 
 app.listen(port, () => {
