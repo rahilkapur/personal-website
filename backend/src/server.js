@@ -39,11 +39,11 @@ app.post('/contact', (req, res) => { //contact
 })
 
 app.use(express.static('../../personal website/frontend/dist'));
-
+app.use(express.static('public'));
 // Handle all other routes by serving the frontend's index.html
 app.get('*', (req, res) => {
     path.join(__dirname, 'build', 'index.html')
-    res.sendFile(path.join(__dirname, '..', '..', 'dist/index.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'frontend/dist/index.html'));
 });
 
 app.listen(port, () => {
