@@ -42,7 +42,7 @@ app.use(express.static('../../personal website/frontend/dist'));
 
 // Handle all other routes by serving the frontend's index.html
 app.get('*', (req, res) => {
-    res.sendFile('../../personal website/frontend/dist/index.html');
+    res.sendFile(path.join(__dirname, '../../personal website/frontend/dist/index.html'));
 });
 
 app.listen(port, () => {
