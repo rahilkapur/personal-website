@@ -1,7 +1,7 @@
 #!/bin/sh
-cd backend
-npm start &
-
-cd ../frontend
+cd frontend
 npm install
 npm run build
+
+cd ../backend
+npm start &
