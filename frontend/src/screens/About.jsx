@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useCallback} from "react";
 import { useAnimate } from "framer-motion";
-import { Col } from "react-bootstrap";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Col, Image } from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import me from '../imgs/IMG_5960.jpg';
@@ -37,7 +36,7 @@ function About() {
         With over five years of programming experience, I'm passionate about continuing my journey of learning and exploring new technologies! I'm interested in Big Data Systems, Artificial Intellegience, and Web Development. My main focus right now is to learn more data intensive applications. I'm also excited to start my career as a Software Development Engineer at <a href="https://aws.amazon.com/?nc2=h_lg">AWS</a>!</p>
         <p>When I'm not at my computer, I enjoy working out, playing guitar, hanging out with my friends, video games, and watching basketball. </p>
         </Col>
-        <Col xs={8} sm={6} md={2} lg={2} style={{ position: "relative" }}><LazyLoadImage ref={scope} src={me} style={{height: '300px', width: '300px'}}alt="Image of Rahil" roundedCircle className="circle-img"/></Col>
+        <Col xs={8} sm={6} md={2} lg={2} style={{ position: "relative" }}><Image ref={scope} src={me} style={{height: '300px', width: '300px'}}alt="Image of Rahil" roundedCircle className="circle-img"/></Col>
         </Row>
         </Container>
     </div>
