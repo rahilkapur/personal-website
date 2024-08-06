@@ -1,14 +1,13 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 5001;
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 app.post('/contact', (req, res) => { //contact 
