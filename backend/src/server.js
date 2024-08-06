@@ -40,13 +40,12 @@ app.post('/contact', (req, res) => { //contact
 
 
 
-// Log contents of /app directory
-//logDirectoryContents('../../app');
+
 
 app.use(express.static('../../personal website/frontend/dist'));
 app.use(express.static('public'));
 // Handle all other routes by serving the frontend's index.html
-const frontendBuildPath = process.env.FRONTEND_BUILD_PATH || path.join(__dirname, '../../frontend/dist');
+const frontendBuildPath = path.join(__dirname, '../../frontend/dist');
 app.get('*', (req, res) => {
     res.sendFile(frontendBuildPath);
 });
