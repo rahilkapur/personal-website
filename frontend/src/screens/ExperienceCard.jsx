@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useCallback} from "react";
-import { Card, Image } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useAnimate } from "framer-motion";
 
 function ExperienceCard(props) {
@@ -17,7 +18,7 @@ function ExperienceCard(props) {
         <Card style={{ maxWidth: '500px', margin: '0 auto'}} ref={cardContent}>
         <Card.Body>
         <div style={{ textAlign: 'center', marginBottom: '15px' }}>
-                    <Image 
+                    <LazyLoadImage 
                         src={props.logo} 
                         alt={`${props.company} logo`} 
                         rounded 

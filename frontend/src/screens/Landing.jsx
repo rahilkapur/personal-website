@@ -3,7 +3,6 @@ import me from '../imgs/IMG_5960.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import '../index.css'
 import { useAnimate } from "framer-motion";
 import ParticleScreen from "./Particles";
