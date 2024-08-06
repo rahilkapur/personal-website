@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import me from '../imgs/IMG_5960.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,9 +13,14 @@ function Landing() {
     const [langScope, langAnimate] = useAnimate();
     const [text, textAnimate] = useAnimate();
 
-    useEffect(() => {
+    const animateFunc = useCallback(() => {
         textAnimate(text.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
-      }, [text, textAnimate]);
+    }, [text, textAnimate])
+
+    useEffect(() => {
+        animateFunc();
+      }, [animateFunc]);
+      
     useEffect(() => {
         const interval = setInterval(() => {
             if (langIndex === langs.length - 1) {
@@ -27,7 +32,7 @@ function Landing() {
         }, 3000);
         langAnimate(langScope.current, { x: [-10, 0], opacity: [0, 1],  }, { duration: 1 });
         return () => clearInterval(interval);
-    }, [langIndex, langScope, langAnimate])
+    }, [langIndex, langScope, langAnimate]);
 
         return (
 
