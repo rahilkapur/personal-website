@@ -13,8 +13,6 @@ function Landing() {
     const [langScope, langAnimate] = useAnimate();
     const [text, textAnimate] = useAnimate();
 
-    
-
     useEffect(() => {
         textAnimate(text.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
       }, [text, textAnimate]);

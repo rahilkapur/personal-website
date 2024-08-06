@@ -1,12 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import { Card, Image } from "react-bootstrap";
 import { useAnimate } from "framer-motion";
 
 function SkillCard(props) {
     const [cardContent, animateCard] = useAnimate();
-    useEffect(() => {
+
+    const animateFunc = useCallback(() => {
         animateCard(cardContent.current, {x: [-170, 0], opacity: [0, 1]}, { duration: 0.75});
-    }, [cardContent, animateCard]);
+    }, [cardContent, animateCard])
+    useEffect(() => {
+        animateFunc();
+    }, [animateFunc]);
 
 
     return (

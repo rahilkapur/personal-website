@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import SkillCard from "./SkillCard";
 import { useAnimate } from "framer-motion";
 import BackgroundParticles from "./BackgroundParticles";
@@ -22,11 +22,15 @@ function Skills() {
     const [languagecontent, animateLanguage] = useAnimate();
     const [languagehead, animateLanguageHead] = useAnimate();
 
-    useEffect(() => {
+    const animateFunc = useCallback(() => {
         animateLibrary(librarycontent.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
         animateLanguage(languagecontent.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
         animateLanguageHead(languagehead.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
-    }, [librarycontent, animateLibrary, languagecontent, animateLanguage, languagehead, animateLanguageHead]);
+    }, [librarycontent, animateLibrary, languagecontent, animateLanguage, languagehead, animateLanguageHead])
+
+    useEffect(() => {
+        animateFunc();
+    }, [animateFunc]);
 
     return (
         <div style={{ position: "relative" }}>

@@ -40,7 +40,6 @@ app.post('/contact', (req, res) => { //contact
 
 
 console.log('Current directory:', __dirname);
-console.log('Frontend build path:', frontendBuildPath);
 
 const frontendBuildPath = path.join(__dirname, '../../frontend/dist');
 app.use(express.static(frontendBuildPath));

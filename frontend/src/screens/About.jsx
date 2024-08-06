@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import { useAnimate } from "framer-motion";
 import { Col, Image } from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
@@ -14,13 +14,16 @@ function About() {
 
     const [pScope, pAnimate] = useAnimate();
 
-    
-
-    useEffect(() => {
+    const animateFunc = useCallback(() => {
         pAnimate(pScope.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
         aboutAnimate(aboutScope.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
         animate(scope.current, { x: [-200, 0], opacity: [0, 1], rotate: [180, 0] }, { duration: 1 });
-    }, [aboutAnimate, aboutScope, pScope, pAnimate, scope, animate]);
+    }, [aboutAnimate, aboutScope, pScope, pAnimate, scope, animate])
+    
+
+    useEffect(() => {
+        animateFunc();
+    }, [animateFunc]);
     return (
         <div style={{ position: "relative" }}>
         <BackgroundParticles className="particle" />
