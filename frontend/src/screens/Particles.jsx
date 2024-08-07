@@ -41,7 +41,7 @@ const ParticleScreen = memo(() => {
             value: "#000000",
         },
       },
-      fpsLimit: 100,
+      fpsLimit: 50,
       interactivity: {
         events: {
           onClick: {
