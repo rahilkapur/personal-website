@@ -48,18 +48,10 @@ const ParticleScreen = memo(() => {
             enable: true,
             mode: "push",
           },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
         },
         modes: {
           push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
+            quantity: 1,
           },
         },
       },
@@ -80,10 +72,9 @@ const ParticleScreen = memo(() => {
           outModes: {
             default: "bounce",
           },
-          random: false,
+          random: true,
           speed: 6,
           straight: true,
-          vibrate: true,
         },
         number: {
           density: {
