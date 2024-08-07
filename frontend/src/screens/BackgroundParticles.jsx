@@ -53,7 +53,7 @@ const BackgroundParticles = memo(() => {
         },
         modes: {
           push: {
-            quantity: 4,
+            quantity: 2,
           },
           repulse: {
             distance: 200,
@@ -99,7 +99,7 @@ const BackgroundParticles = memo(() => {
           value: { min: 1, max: 5 },
         },
       },
-      detectRetina: true,
+      detectRetina: false,
     }),
     [],
   );

@@ -64,7 +64,7 @@ const ParticleScreen = memo(() => {
         },
         links: {
           color: "#ffffff",
-          distance: 150,
+          distance: 100,
           enable: true,
           opacity: 0.5,
           width: 1,
@@ -77,13 +77,12 @@ const ParticleScreen = memo(() => {
           },
           random: true,
           speed: 6,
-          straight: true,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 40,
+          value: 30,
         },
         opacity: {
           value: 0.7,
@@ -95,7 +94,7 @@ const ParticleScreen = memo(() => {
           value: { min: 1, max: 5 },
         },
       },
-      detectRetina: true,
+      detectRetina: false,
     }),
     [],
   );
