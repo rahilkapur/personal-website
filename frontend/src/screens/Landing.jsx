@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from "react";
+import React, {useState, useEffect, useCallback, useMemo} from "react";
 import me from '../imgs/IMG_5960.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,7 +7,7 @@ import '../index.css'
 import { useAnimate } from "framer-motion";
 import ParticleScreen from "./Particles";
 function Landing() {
-    const langs = ['Hello', "Bonjour", "Hola", 'Hallo', "नमस्ते", "今日は", "안녕하세요"];
+    const langs = useMemo(() => ['Hello', "Bonjour", "Hola", 'Hallo', "नमस्ते", "今日は", "안녕하세요"], []);
     const [langIndex, setLangIndex] = useState(0);
     const [langScope, langAnimate] = useAnimate();
     const [text, textAnimate] = useAnimate();
