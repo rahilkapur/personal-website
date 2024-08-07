@@ -93,7 +93,7 @@ const ParticleScreen = memo(() => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 50,
         },
         opacity: {
           value: 0.7,
