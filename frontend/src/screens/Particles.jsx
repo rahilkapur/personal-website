@@ -48,6 +48,9 @@ const ParticleScreen = memo(() => {
             enable: true,
             mode: "push",
           },
+          onHover: {
+            enable: false
+          }
         },
         modes: {
           push: {
@@ -80,7 +83,7 @@ const ParticleScreen = memo(() => {
           density: {
             enable: true,
           },
-          value: 50,
+          value: 40,
         },
         opacity: {
           value: 0.7,

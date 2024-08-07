@@ -30,7 +30,7 @@ const BackgroundParticles = memo(() => {
     
         AnimatableColor: {
             AnimatableColor: {
-                enable: true
+                enable: false
             }
         },
       fullScreen: {
@@ -76,11 +76,7 @@ const BackgroundParticles = memo(() => {
           direction: "outside",
           enable: true,
           outModes: {
-            default: "bounce",
-            top: "bounce",
-            left: "split",
-            right: "split",
-            bottom: "bounce"
+            default: "bounce"
           },
           random: true,
           speed: 6,
@@ -91,7 +87,7 @@ const BackgroundParticles = memo(() => {
           density: {
             enable: true,
           },
-          value: 50,
+          value: 40,
         },
         opacity: {
           value: 0.7,
