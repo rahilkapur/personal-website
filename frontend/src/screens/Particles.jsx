@@ -30,7 +30,7 @@ const ParticleScreen = memo(() => {
     
         AnimatableColor: {
             AnimatableColor: {
-                enable: true
+                enable: false
             }
         },
       fullScreen: {
@@ -79,10 +79,6 @@ const ParticleScreen = memo(() => {
           enable: true,
           outModes: {
             default: "bounce",
-            top: "bounce",
-            left: "split",
-            right: "split",
-            bottom: "bounce"
           },
           random: false,
           speed: 6,
