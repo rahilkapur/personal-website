@@ -21,8 +21,6 @@ function Navi() {
                         >Skills</Nav.Link>
                         <Nav.Link as={Link} to="/experience" eventKey="4.0"
                         >Experience</Nav.Link>
-                        <Nav.Link as={Link} to="/contact" eventKey="5.0"
-                        >Contact</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

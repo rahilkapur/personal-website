@@ -17,7 +17,6 @@ function WebApp() { //will contain all screens
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/experience" element={<Experience />} />
-        <Route path="/contact" element={<Contact />}/>
       </Routes>
     </BrowserRouter>
     )
