@@ -45,7 +45,8 @@ const ParticleScreen = memo(() => {
       interactivity: {
         events: {
           onClick: {
-            enable: false,
+            enable: true,
+            mode: "push"
           },
           onHover: {
             enable: true,
@@ -53,6 +54,9 @@ const ParticleScreen = memo(() => {
           }
         },
         modes: {
+          push: {
+            quantity: 4,
+          },
           repulse: {
             distance: 200,
             duration: 0.4,
@@ -75,15 +79,21 @@ const ParticleScreen = memo(() => {
           enable: true,
           outModes: {
             default: "bounce",
+            top: "bounce",
+            left: "split",
+            right: "split",
+            bottom: "bounce"
           },
-          random: true,
+          random: false,
           speed: 6,
+          straight: true,
+          vibrate: true,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 30,
+          value: 100,
         },
         opacity: {
           value: 0.7,
