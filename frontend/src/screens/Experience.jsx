@@ -39,7 +39,7 @@ function Experience() {
         {
             company: "dSilo",
             role: "Software Engineer Intern",
-            info: "Integrated and developed a Python application with Azure functionality to OCR non-searchable PDFs into an Azure storage blob that has convertede 1,000+ PDFs.",
+            info: "Integrated and developed a Python application with Azure functionality to OCR non-searchable PDFs into an Azure storage blob that has converted 1,000+ PDFs.",
             logo: dSilologo
         }
     ]
