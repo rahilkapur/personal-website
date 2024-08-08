@@ -20,13 +20,7 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-lazy-load-image-component": "^1.6.2",
-    "react-router-dom": "^6.23.1",
-    "@rollup/rollup-linux-x64-gnu": "4.6.1"
-  },
-  "overrides": {
-    "vite": {
-      "rollup": "npm:@rollup/wasm-node"
-    }
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -37,7 +31,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "rollup": "^4.20.0",
-    "vite": "^5.3.5",
-    "@rollup/rollup-linux-x64-gnu": "4.6.1"
+    "vite": "^5.3.5"
   }
 }
