@@ -5,7 +5,7 @@ const path = require('path');
 require('dotenv').config();
 const fs = require('fs');
 const app = express();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
