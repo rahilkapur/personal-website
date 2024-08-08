@@ -17,6 +17,11 @@
     "nodemailer": "^6.9.14",
     "@rollup/rollup-linux-x64-gnu": "4.6.1"
   },
+  "overrides": {
+    "vite": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
+  },
   "devDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.6.1"
   }
