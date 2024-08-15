@@ -1,23 +1,25 @@
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useState, useEffect, useCallback, useMemo} from "react";
 import me from '../imgs/IMG_5960.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import '../index.css'
 import { useAnimate } from "framer-motion";
 import ParticleScreen from "./Particles";
 function Landing() {
-    const langs = ['Hello', "Bonjour", "Hola", 'Hallo', "नमस्ते", "今日は", "안녕하세요"];
+    const langs = useMemo(() => ['Hello', "Bonjour", "Hola", 'Hallo', "नमस्ते", "今日は", "안녕하세요"], []);
     const [langIndex, setLangIndex] = useState(0);
     const [langScope, langAnimate] = useAnimate();
     const [text, textAnimate] = useAnimate();
 
-    
+    const animateFunc = useCallback(() => {
+        textAnimate(text.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
+    }, [text, textAnimate])
 
     useEffect(() => {
-        textAnimate(text.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
-      }, [text, textAnimate]);
+        animateFunc();
+      }, [animateFunc]);
+      
     useEffect(() => {
         const interval = setInterval(() => {
             if (langIndex === langs.length - 1) {
@@ -29,7 +31,7 @@ function Landing() {
         }, 3000);
         langAnimate(langScope.current, { x: [-10, 0], opacity: [0, 1],  }, { duration: 1 });
         return () => clearInterval(interval);
-    }, [langIndex, langScope, langAnimate])
+    }, [langIndex, langScope, langAnimate]);
 
         return (
 

@@ -1,13 +1,13 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+const path = require('path');
 require('dotenv').config();
-
+const fs = require('fs');
 const app = express();
-const port = 5001;
+const port = process.env.PORT || 4000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 app.post('/contact', (req, res) => { //contact 
@@ -38,6 +38,16 @@ app.post('/contact', (req, res) => { //contact
 })
 
 
+console.log('Current directory:', __dirname);
+
+const frontendBuildPath = path.join(__dirname, '../../frontend/dist');
+app.use(express.static(frontendBuildPath));
+app.use(express.static('public'));
+// Handle all other routes by serving the frontend's index.html
+app.get('*', (req, res) => {
+    res.sendFile(frontendBuildPath, 'index.html');
+});
+
 app.listen(port, () => {
-    console.log(`My API has been opened on :${port}`)
+    console.log(`My API has been opened on :${port}`);
 });

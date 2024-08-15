@@ -10,7 +10,7 @@ function Contact() {
 
     async function handleSubmit(e) {
         e?.preventDefault();
-        const resp = await fetch('http://localhost:5001/contact', {
+        const resp = await fetch('/.netlify/functions/contact', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

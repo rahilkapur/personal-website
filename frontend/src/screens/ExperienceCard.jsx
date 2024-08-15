@@ -1,19 +1,24 @@
-import React, {useState, useEffect} from "react";
-import { Card, Image } from "react-bootstrap";
+import React, {useState, useEffect, useCallback} from "react";
+import { Card } from "react-bootstrap";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useAnimate } from "framer-motion";
 
 function ExperienceCard(props) {
     const [cardContent, animateCard] = useAnimate();
-    useEffect(() => {
+
+    const animateFunc = useCallback(() => {
         animateCard(cardContent.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 0.75});
-    }, [cardContent, animateCard]);
+    }, [cardContent, animateCard])
+    useEffect(() => {
+        animateFunc()
+    }, [animateFunc]);
 
 
     return (
         <Card style={{ maxWidth: '500px', margin: '0 auto'}} ref={cardContent}>
         <Card.Body>
         <div style={{ textAlign: 'center', marginBottom: '15px' }}>
-                    <Image 
+                    <LazyLoadImage 
                         src={props.logo} 
                         alt={`${props.company} logo`} 
                         rounded 

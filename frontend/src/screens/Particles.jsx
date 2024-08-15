@@ -30,7 +30,7 @@ const ParticleScreen = memo(() => {
     
         AnimatableColor: {
             AnimatableColor: {
-                enable: true
+                enable: false
             }
         },
       fullScreen: {
@@ -41,17 +41,17 @@ const ParticleScreen = memo(() => {
             value: "#000000",
         },
       },
-      fpsLimit: 100,
+      fpsLimit: 50,
       interactivity: {
         events: {
           onClick: {
             enable: true,
-            mode: "push",
+            mode: "push"
           },
           onHover: {
             enable: true,
-            mode: "repulse",
-          },
+            mode: "repulse"
+          }
         },
         modes: {
           push: {
@@ -69,7 +69,7 @@ const ParticleScreen = memo(() => {
         },
         links: {
           color: "#ffffff",
-          distance: 150,
+          distance: 100,
           enable: true,
           opacity: 0.5,
           width: 1,
@@ -93,7 +93,7 @@ const ParticleScreen = memo(() => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 100,
         },
         opacity: {
           value: 0.7,
@@ -105,7 +105,7 @@ const ParticleScreen = memo(() => {
           value: { min: 1, max: 5 },
         },
       },
-      detectRetina: true,
+      detectRetina: false,
     }),
     [],
   );

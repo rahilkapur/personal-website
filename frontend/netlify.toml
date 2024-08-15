@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build" # Adjust this to the appropriate build command for your frontend
+  publish = "/dist" # Directory to deploy
+
+[functions]
+  directory = "../functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

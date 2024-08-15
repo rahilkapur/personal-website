@@ -30,7 +30,7 @@ const BackgroundParticles = memo(() => {
     
         AnimatableColor: {
             AnimatableColor: {
-                enable: true
+                enable: false
             }
         },
       fullScreen: {
@@ -41,7 +41,7 @@ const BackgroundParticles = memo(() => {
             value: "#000000",
         },
       },
-      fpsLimit: 100,
+      fpsLimit: 50,
       interactivity: {
         events: {
           onClick: {
@@ -53,7 +53,7 @@ const BackgroundParticles = memo(() => {
         },
         modes: {
           push: {
-            quantity: 4,
+            quantity: 2,
           },
           repulse: {
             distance: 200,
@@ -76,11 +76,7 @@ const BackgroundParticles = memo(() => {
           direction: "outside",
           enable: true,
           outModes: {
-            default: "bounce",
-            top: "bounce",
-            left: "split",
-            right: "split",
-            bottom: "bounce"
+            default: "bounce"
           },
           random: true,
           speed: 6,
@@ -91,7 +87,7 @@ const BackgroundParticles = memo(() => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 30,
         },
         opacity: {
           value: 0.7,
@@ -103,7 +99,7 @@ const BackgroundParticles = memo(() => {
           value: { min: 1, max: 5 },
         },
       },
-      detectRetina: true,
+      detectRetina: false,
     }),
     [],
   );

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import BackgroundParticles from "./BackgroundParticles";
 import { useAnimate } from "framer-motion";
@@ -12,11 +12,14 @@ function Experience() {
 
     const [experienceCard, setExperience] = useAnimate();
 
-
-    useEffect(() => {
+    const animateFunc = useCallback(() => {
         setHeadingText(headingText.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
         setExperience(experienceCard.current, {x: [-200, 0], opacity: [0, 1]}, { duration: 1});
-    }, [setHeadingText, headingText, setExperience, experienceCard]);
+    }, [setHeadingText, headingText, setExperience, experienceCard])
+
+    useEffect(() => {
+        animateFunc();
+    }, [animateFunc]);
 
     const experiences= [
         {
@@ -36,7 +39,7 @@ function Experience() {
         {
             company: "dSilo",
             role: "Software Engineer Intern",
-            info: "Integrated and developed a Python application with Azure functionality to OCR non-searchable PDFs into an Azure storage blob that has convertede 1,000+ PDFs.",
+            info: "Integrated and developed a Python application with Azure functionality to OCR non-searchable PDFs into an Azure storage blob that has converted 1,000+ PDFs.",
             logo: dSilologo
         }
     ]
